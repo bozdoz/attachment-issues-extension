@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        {
+          "header": "Content-Disposition",
+          "operation": "remove"
+        },
+        {
+          "header": "X-Ben",
+          "operation": "set",
+          "value": "Was Here"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "resourceTypes": ["main_frame", "xmlhttprequest"],
+      "responseHeaders": [
+        { "header": "Content-Type", "operation": "contains", "value": "image" }
+      ]
+    }
+  }
+]

@@ -1,0 +1,3 @@
+# Attachment Issues Chrome Extension
+
+For rendering images in the browser instead of downloading them...
