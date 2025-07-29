@@ -4,7 +4,7 @@ const path = require("node:path");
 
 const server = http.createServer((req, res) => {
   if (req.url === "/download-image") {
-    const filePath = path.join(__dirname, "image.png");
+    const filePath = path.join(__dirname, "attachment-issues-icon.png");
     fs.access(filePath, fs.constants.F_OK, (err) => {
       if (err) {
         res.statusCode = 404;
@@ -12,8 +12,11 @@ const server = http.createServer((req, res) => {
         return;
       }
       res.setHeader("Content-Type", "image/png");
-      res.setHeader("X-Whatever", "Updated");
-      res.setHeader("Content-Disposition", "attachment; filename=image.png");
+      res.setHeader("X-Hello", "Jill!");
+      res.setHeader(
+        "Content-Disposition",
+        "attachment; filename=attachment-issues-icon.png"
+      );
       const fileStream = fs.createReadStream(filePath);
       fileStream.pipe(res);
     });
