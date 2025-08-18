@@ -4,7 +4,7 @@ const path = require("node:path");
 
 const server = http.createServer((req, res) => {
   if (req.url === "/download-image") {
-    const filePath = path.join(__dirname, "attachment-issues-icon.png");
+    const filePath = path.join(__dirname, "..", "attachment-issues-icon.png");
     fs.access(filePath, fs.constants.F_OK, (err) => {
       if (err) {
         res.statusCode = 404;
